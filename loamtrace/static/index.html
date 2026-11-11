@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LoamTrace</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="mark">LT</span>
+          <div>
+            <h1>LoamTrace</h1>
+            <p>Source-grounded reporting</p>
+          </div>
+        </div>
+
+        <label>
+          Project
+          <input id="projectId" value="default" />
+        </label>
+        <button id="createProject">Create / Open</button>
+
+        <section>
+          <h2>Import PDF</h2>
+          <label>
+            Local file path
+            <input id="filePath" placeholder="/path/to/report.pdf" />
+          </label>
+          <button id="importDoc">Import</button>
+        </section>
+
+        <section>
+          <h2>Documents</h2>
+          <div id="documentList" class="stack"></div>
+        </section>
+      </aside>
+
+      <main class="workspace">
+        <header class="toolbar">
+          <label>
+            Search evidence
+            <input id="searchQuery" placeholder="Revenue, 2025, risk..." />
+          </label>
+          <button id="runSearch">Search</button>
+        </header>
+
+        <div class="main-grid">
+          <section class="panel">
+            <div class="panel-title">
+              <h2>Evidence Results</h2>
+              <span id="status">Ready</span>
+            </div>
+            <div id="results" class="results"></div>
+          </section>
+
+          <section class="panel viewer-panel">
+            <div class="panel-title">
+              <h2>Document Viewer</h2>
+              <span id="viewerMeta">No citation selected</span>
+            </div>
+            <div id="viewer" class="viewer">
+              <div class="empty">Select a verified citation to highlight its source.</div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-title">
+              <h2>Claim Verification</h2>
+            </div>
+            <label>
+              Claim
+              <textarea id="claimText" rows="4" placeholder="Claim text with any numbers that must be verified"></textarea>
+            </label>
+            <label>
+              Exact quote
+              <textarea id="quoteText" rows="4" placeholder="Paste an exact quote from the selected chunk"></textarea>
+            </label>
+            <button id="verifyClaim">Verify Claim</button>
+            <pre id="verifyOutput"></pre>
+            <button id="renderMemo">Render Verified Memo</button>
+            <pre id="memoOutput"></pre>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

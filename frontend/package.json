@@ -1,0 +1,39 @@
+{
+  "name": "loamtrace-frontend",
+  "private": true,
+  "version": "0.5.42",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "electron": "electron electron/main.cjs",
+    "electron:dev": "VITE_DEV_SERVER_URL=http://127.0.0.1:5173 electron electron/main.cjs",
+    "prepare:sidecar": "node scripts/prepare-sidecar.cjs",
+    "prepare:ocr": "node scripts/prepare-ocr.cjs",
+    "build:sidecar": "node scripts/build-sidecar.cjs",
+    "package:mac": "npm run prepare:sidecar && npm run prepare:ocr && npm run build && electron-packager . LoamTrace --platform=darwin --arch=arm64 --out=release --overwrite --prune=true --asar=false --ignore='^/(src|.gstack|release)$'",
+    "package:mac:self-contained": "npm run prepare:sidecar && npm run prepare:ocr && npm run build:sidecar && npm run build && electron-packager . LoamTrace --platform=darwin --arch=arm64 --out=release --overwrite --prune=true --asar=false --ignore='^/(src|.gstack|release)$'",
+    "build": "tsc -b && vite build",
+    "visual:qa": "VITE_USE_MOCK=1 npm run build && electron scripts/visual-qa.cjs",
+    "bridge:qa": "VITE_USE_MOCK=1 npm run build && electron scripts/bridge-qa.cjs",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build",
+    "tauri:check": "cd src-tauri && cargo check",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.0.1",
+    "@tauri-apps/cli": "^2.11.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^6.0.2",
+    "electron": "^42.3.3",
+    "typescript": "^5.6.3",
+    "vite": "^8.0.16"
+  }
+}

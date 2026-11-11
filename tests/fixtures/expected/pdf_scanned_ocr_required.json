@@ -1,0 +1,29 @@
+{
+  "parse_result": {
+    "pages": 1,
+    "words": 0,
+    "tables": 0,
+    "cells": 0,
+    "chunks": 0,
+    "status": "failed",
+    "ocr_used": false,
+    "reason": "ocr_required"
+  },
+  "document": {
+    "status": "failed",
+    "ocr_used": 0,
+    "ocr_required": true
+  },
+  "pages": [
+    {
+      "page_number": 1,
+      "width": 100.0,
+      "height": 200.0,
+      "text_layer_available": 0
+    }
+  ],
+  "chunks": 0,
+  "audit_events": [
+    "pdf_ocr_required"
+  ]
+}

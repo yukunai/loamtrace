@@ -1,0 +1,72 @@
+{
+  "parse_result": {
+    "pages": 1,
+    "words": 0,
+    "tables": 1,
+    "cells": 4,
+    "chunks": 1,
+    "status": "parsed",
+    "ocr_used": false,
+    "reason": null
+  },
+  "tables": [
+    {
+      "bbox_json": {
+        "page": 1,
+        "x0": 0.1,
+        "y0": 0.1,
+        "x1": 0.9,
+        "y1": 0.4
+      },
+      "parser": "pdfplumber-find_tables"
+    }
+  ],
+  "cells": [
+    {
+      "row_index": 1,
+      "col_index": 1,
+      "text": "Metric",
+      "value_json": {
+        "text": "Metric"
+      }
+    },
+    {
+      "row_index": 1,
+      "col_index": 2,
+      "text": "2025",
+      "value_json": {
+        "text": "2025"
+      }
+    },
+    {
+      "row_index": 2,
+      "col_index": 1,
+      "text": "Revenue",
+      "value_json": {
+        "text": "Revenue"
+      }
+    },
+    {
+      "row_index": 2,
+      "col_index": 2,
+      "text": "24%",
+      "value_json": {
+        "text": "24%"
+      }
+    }
+  ],
+  "chunks": [
+    {
+      "chunk_type": "pdf_table",
+      "text": "| Metric | 2025 |\n| --- | --- |\n| Revenue | 24% |",
+      "page_start": 1,
+      "page_end": 1,
+      "source_params": {
+        "page": "1",
+        "has_table": true,
+        "has_chunk": true
+      },
+      "cell_count": 4
+    }
+  ]
+}

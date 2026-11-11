@@ -1,0 +1,55 @@
+{
+  "parse_result": {
+    "paragraphs": 0,
+    "tables": 1,
+    "cells": 4,
+    "chunks": 1,
+    "status": "parsed"
+  },
+  "cells": [
+    {
+      "cell_ref": "R1C1",
+      "row_index": 1,
+      "col_index": 1,
+      "text": "Metric",
+      "value_json": {
+        "text": "Metric"
+      }
+    },
+    {
+      "cell_ref": "R1C2",
+      "row_index": 1,
+      "col_index": 2,
+      "text": "2025",
+      "value_json": {
+        "text": "2025"
+      }
+    },
+    {
+      "cell_ref": "R2C1",
+      "row_index": 2,
+      "col_index": 1,
+      "text": "ARR",
+      "value_json": {
+        "text": "ARR"
+      }
+    },
+    {
+      "cell_ref": "R2C2",
+      "row_index": 2,
+      "col_index": 2,
+      "text": "120",
+      "value_json": {
+        "text": "120"
+      }
+    }
+  ],
+  "chunks": [
+    {
+      "chunk_type": "docx_table",
+      "text": "| Metric | 2025 |\n| --- | --- |\n| ARR | 120 |",
+      "source_fragment": "table=1",
+      "cell_count": 4
+    }
+  ]
+}
